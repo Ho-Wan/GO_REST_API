@@ -4,11 +4,33 @@ http://localhost:8000/api/book
 ### Get book by ID
 GET http://localhost:8000/api/book/1 HTTP/1.1
 
-### POST
-POST http://localhost:8000/api/book/1 HTTP/1.1
+### Create book
+POST http://localhost:8000/api/book HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "isbn": "555555",
+    "title": "Book Three",
+    "author": {
+        "firstname": "Carol",
+        "lastname": "Williams"
+    }
+}
+
+
+### Delete book by ID
+DELETE http://localhost:8000/api/book/1 HTTP/1.1
+
+
+### Update book
+PUT http://localhost:8000/api/book/2 HTTP/1.1
+content-type: application/json
+
+{
+    "isbn": "777777",
+    "title": "Update Title",
+    "author": {
+        "firstname": "Jeff",
+        "lastname": "Thompson"
+    }
 }
